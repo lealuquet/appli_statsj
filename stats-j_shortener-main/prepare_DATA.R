@@ -49,7 +49,7 @@ if (file.exists("data/RP2023_migcom.parquet")) {
   print("✅ Le fichier parquet migCOM existe déjà.")
 } else {
   write_parquet(
-    fread("data/RP2023_migcom.csv") |>
+    fread("data/FD_MIGCOM_2023.csv") |>
       mutate(across(-IPONDI, as.factor)),
     "data/RP2023_migcom.parquet"
   )
@@ -59,7 +59,7 @@ if (file.exists("data/RP2023_mobpro.parquet")) {
   print("✅ Le fichier parquet mobPRO existe déjà.")
 } else {
   write_parquet(
-    fread("data/RP2023_mobpro.csv") |>
+    fread("data/FD_MOBPRO_2023.csv") |>
       mutate(across(-IPONDI, as.factor)),
     "data/RP2023_mobpro.parquet"
   )
@@ -69,7 +69,7 @@ if (file.exists("data/RP2023_mobsco.parquet")) {
   print("✅ Le fichier parquet mobSCO existe déjà.")
 } else {
   write_parquet(
-    fread("data/RP2023_mobsco.csv") |>
+    fread("data/FD_MOBSCO_2023.csv") |>
       mutate(across(-IPONDI, as.factor)),
     "data/RP2023_mobsco.parquet"
   )
