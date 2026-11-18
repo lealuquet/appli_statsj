@@ -45,33 +45,33 @@ library(arrow)
 # CONVERSION DES FICHIERS SOURCE INSEE CSV MIG EN PARQUET
 ###################################################################
 
-if (file.exists("data/FD_MIGCOM_2022.parquet")) {
+if (file.exists("data/RP2023_migcom.parquet")) {
   print("✅ Le fichier parquet migCOM existe déjà.")
 } else {
   write_parquet(
-    fread("data/FD_MIGCOM_2022.csv") |>
+    fread("data/RP2023_migcom.csv") |>
       mutate(across(-IPONDI, as.factor)),
-    "data/FD_MIGCOM_2022.parquet"
+    "data/RP2023_migcom.parquet"
   )
 }
 
-if (file.exists("data/FD_MOBPRO_2022.parquet")) {
+if (file.exists("data/RP2023_mobpro.parquet")) {
   print("✅ Le fichier parquet mobPRO existe déjà.")
 } else {
   write_parquet(
-    fread("data/FD_MOBPRO_2022.csv") |>
+    fread("data/RP2023_mobpro.csv") |>
       mutate(across(-IPONDI, as.factor)),
-    "data/FD_MOBPRO_2022.parquet"
+    "data/RP2023_mobpro.parquet"
   )
 }
 
-if (file.exists("data/FD_MOBSCO_2022.parquet")) {
+if (file.exists("data/RP2023_mobsco.parquet")) {
   print("✅ Le fichier parquet mobSCO existe déjà.")
 } else {
   write_parquet(
-    fread("data/FD_MOBSCO_2022.csv") |>
+    fread("data/RP2023_mobsco.csv") |>
       mutate(across(-IPONDI, as.factor)),
-    "data/FD_MOBSCO_2022.parquet"
+    "data/RP2023_mobsco.parquet"
   )
 }
 
